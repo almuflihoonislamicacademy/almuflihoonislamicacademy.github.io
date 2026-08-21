@@ -85,6 +85,22 @@ footer strong{color:#f0d68d}
 .detail-box h3{font-size:32px;color:var(--green2);margin-bottom:8px}
 .detail-box p{color:var(--muted);font-size:18px}
 .detail-box li{margin:5px 0}
+
+.admission{background:var(--cream);border-top:1px solid #eadcb8}
+.admission-wrap{max-width:900px;margin:auto;background:#fff;border-radius:24px;padding:34px;box-shadow:var(--shadow);border:1px solid #e9e5d8}
+.admission-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-weight:700;color:var(--green2)}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid #dfe6e1;border-radius:12px;padding:12px 14px;font-family:"Noto Naskh Arabic",serif;font-size:16px;background:#fbfdfc;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,74,.12)}
+.form-group textarea{min-height:110px;resize:vertical}
+.admission-note{background:#f7faf8;border-right:4px solid var(--gold);padding:12px 15px;border-radius:10px;margin:0 0 20px;color:var(--muted)}
+.form-actions{text-align:center;margin-top:22px}
+.form-submit{border:0;cursor:pointer;background:var(--green);color:#fff;padding:13px 32px;border-radius:12px;font-family:"Noto Naskh Arabic",serif;font-size:18px;font-weight:700}
+.form-submit:hover{background:var(--green2)}
+@media(max-width:800px){.admission-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}}
+
 @media(max-width:800px){.founder-grid{grid-template-columns:1fr}.founder-copy{text-align:center}}
 
 @media(max-width:800px){
@@ -101,6 +117,7 @@ footer strong{color:#f0d68d}
       <li><a href="#home">ہوم</a></li>
       <li><a href="#about">ہمارے بارے میں</a></li>
       <li><a href="#courses">کورسز</a></li>
+      <li><a href="#admission">داخلہ فارم</a></li>
       <li><a href="#mission">مقصد</a></li>
       <li><a href="#contact">رابطہ</a></li>
     </ul>
@@ -191,6 +208,63 @@ footer strong{color:#f0d68d}
   </div>
 </section>
 
+
+<section id="admission" class="admission">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">داخلہ</span>
+      <h2>داخلہ فارم</h2>
+      <p>اپنی معلومات درج کریں۔ Submit کرنے پر فارم WhatsApp کے ذریعے اکیڈمی کو بھیجنے کے لیے تیار ہو جائے گا۔</p>
+    </div>
+    <div class="admission-wrap">
+      <p class="admission-note">تمام ضروری معلومات درست درج کریں۔ کورس منتخب کرنا لازمی ہے۔</p>
+      <form id="admissionForm">
+        <div class="admission-grid">
+          <div class="form-group">
+            <label for="studentName">طالب علم کا نام *</label>
+            <input id="studentName" type="text" placeholder="اپنا نام لکھیں" required>
+          </div>
+          <div class="form-group">
+            <label for="fatherName">والد کا نام *</label>
+            <input id="fatherName" type="text" placeholder="والد کا نام لکھیں" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">موبائل / WhatsApp نمبر *</label>
+            <input id="phone" type="tel" placeholder="03XXXXXXXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="courseSelect">منتخب کورس *</label>
+            <select id="courseSelect" required>
+              <option value="">کورس منتخب کریں</option>
+              <option>نماز کورس</option>
+              <option>چھ کلمے</option>
+              <option>سورۃ الجمعہ</option>
+              <option>ترجمہ و تفسیر</option>
+              <option>دعائیں و اذکار</option>
+              <option>اسلامی بنیادیات</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="city">شہر *</label>
+            <input id="city" type="text" placeholder="اپنا شہر لکھیں" required>
+          </div>
+          <div class="form-group">
+            <label for="education">تعلیمی قابلیت</label>
+            <input id="education" type="text" placeholder="مثلاً میٹرک، انٹر، گریجویشن">
+          </div>
+          <div class="form-group full">
+            <label for="message">اضافی معلومات</label>
+            <textarea id="message" placeholder="اگر کوئی سوال یا اضافی معلومات ہو تو یہاں لکھیں"></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="form-submit" type="submit">📲 داخلہ فارم WhatsApp پر بھیجیں</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section id="mission" class="free">
   <div class="container free-box">
     <span class="eyebrow">ہمارا مقصد</span>
@@ -241,6 +315,32 @@ duain:{title:'دعائیں و اذکار',icon:'🤲',intro:'روزمرہ زند
 basics:{title:'اسلامی بنیادیات',icon:'🌙',intro:'ایمان، عبادات اور اسلامی آداب سے متعلق بنیادی معلومات آسان انداز میں۔',items:['ایمان اور بنیادی عقائد','عبادات کا تعارف','اسلامی آداب و اخلاق','روزمرہ زندگی کی دینی رہنمائی','عمل اور کردار کی بہتری']}};
 function openCourse(id){const c=courseData[id];document.getElementById('detailContent').innerHTML='<div style="font-size:42px">'+c.icon+'</div><h3>'+c.title+'</h3><p>'+c.intro+'</p><h4 style="margin-top:18px;color:#0b5d46;font-size:21px">کورس میں شامل موضوعات</h4><ul>'+c.items.map(x=>'<li>'+x+'</li>').join('')+'</ul>';document.getElementById('courseDetail').classList.add('show');document.body.style.overflow='hidden'}
 function closeCourse(){document.getElementById('courseDetail').classList.remove('show');document.body.style.overflow=''}
+</script>
+
+<script>
+document.getElementById('admissionForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name=document.getElementById('studentName').value.trim();
+  const father=document.getElementById('fatherName').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const course=document.getElementById('courseSelect').value;
+  const city=document.getElementById('city').value.trim();
+  const education=document.getElementById('education').value.trim();
+  const message=document.getElementById('message').value.trim();
+
+  const text =
+`*المفلحون اسلامک اکیڈمی — داخلہ فارم*
+
+👤 طالب علم: ${name}
+👨 والد کا نام: ${father}
+📱 موبائل/WhatsApp: ${phone}
+📚 کورس: ${course}
+🏙️ شہر: ${city}
+🎓 تعلیمی قابلیت: ${education || 'درج نہیں کی گئی'}
+📝 اضافی معلومات: ${message || 'کوئی نہیں'}`;
+
+  window.open('https://wa.me/923182495626?text='+encodeURIComponent(text), '_blank');
+});
 </script>
 <script>
 const links=document.querySelector('.links');
